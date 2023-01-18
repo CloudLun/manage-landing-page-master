@@ -1,0 +1,6 @@
+.container{
+    overflow-x: hidden;
+    @include breakpoint-up(large) {
+        padding: 0px 165px;
+    }
+}

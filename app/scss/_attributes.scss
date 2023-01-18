@@ -1,0 +1,87 @@
+.attributes {
+    @include breakpoint-up(large) {
+        // border: 1px solid orange;
+        display: flex;
+        // flex-direction: row-reverse;
+        // justify-content: space-between;
+        padding: 66px 0 73px;
+    }
+    &__intro {
+        // border: 1px solid green;
+        margin: auto;
+        padding: 60px 22px 34px 22px;
+        text-align: center;
+        @include breakpoint-up(large) {
+            margin: 0;
+            padding: 0 62.5px 0 0;
+            text-align: start;
+        }
+        .title {
+            font-size: 30px;
+            font-weight: 700;
+            @include breakpoint-up(large) {
+                // border: 1px solid brown;
+                margin-bottom: 12px;
+                width: 100%;
+                font-size: 40px;
+            }
+        }
+        .content {
+            // border: 1px solid blue;
+            padding-top: 13px;
+            font-size: 14px;
+            line-height: 2;
+            color: $contentFontColor;
+            @include breakpoint-up(large) {
+                width: 75%;
+                font-size: 16px;
+            }
+        }
+    }
+    &__list {
+        // border: 1px solid blue;
+        padding: 20px 16px 23px 16px;
+        @include breakpoint-up(large) {
+            padding: 0 0 0 62.5px;
+        }
+        &__item {
+            // border: 1px solid red;
+            &:not(:last-child) {
+                margin-bottom: 47px;
+            }
+
+            .title { 
+                display: flex;
+                align-items: center;
+                margin-bottom: 8px;
+                background-color: $attributeTitle;
+                @include breakpoint-up(large) {
+                    margin-bottom: 19px;
+                    background-color: $white;
+                }
+                span {
+                    margin-right: 15px;
+                    padding: 6px 25px;
+                    border-radius: 39px;
+                    font-weight: bold;
+                    color: $white;
+                    background-color: $mainColor;
+                }
+                p {
+                    // border: 1px solid orange;
+                    font-weight: bold;
+                }
+            }
+            .content {
+                font-size: 14px;
+                line-height: 2;
+                color: $contentFontColor;
+                @include breakpoint-up(large) {
+                    // border: 1px solid orange;
+                    margin-left: 85px;
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}

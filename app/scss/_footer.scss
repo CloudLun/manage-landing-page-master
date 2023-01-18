@@ -1,0 +1,126 @@
+.information {
+    padding: 0 24px 0 24px;
+    background-color: #1d1e25;
+    @include breakpoint-up(medium) {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-areas:
+            "logo items items subscribe"
+            "media items items copyright";
+        align-items: start;
+    }
+    &__subscribe {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 8px;
+        padding-top: 50px;
+        @include breakpoint-up(medium) {
+            grid-area: subscribe;
+            margin-top: 9px;
+        }
+        .input-container {
+            input {
+                border: 1px solid;
+                padding-left: 24px;
+                width: 239px;
+                height: 44px;
+                border-radius: 22px;
+                @include breakpoint-up(medium) {
+                    width: 190px;
+                }
+            }
+            .reminder {
+                display: none;
+                margin-top: 8px;
+                padding-left: 24px;
+                font-size: 10px;
+                font-style: italic;
+                color: red;
+                &[data-visible="true"] {
+                    display: block;
+                }
+                // &[data-visible = 'false'] {
+                //     display: none;
+                // }
+            }
+        }
+        .go {
+            width: 80px;
+            height: 44px;
+            color: $white;
+            background-color: $mainColor;
+            border-radius: 50px;
+            @include breakpoint-up(medium) {
+                width: 64px;
+                height: 44px;
+            }
+        }
+    }
+
+    &__items {
+        // border: 1px solid white;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-row-gap: 13px;
+        margin-top: 60px;
+        font-size: 15px;
+        color: $white;
+        @include breakpoint-up(medium) {
+            grid-area: items;
+            grid-row-gap: 26px;
+            margin-left: 24px
+        }
+        .item {
+            justify-self: center;
+            text-align: start;
+            @include breakpoint-up(medium) {
+                justify-self: start;
+            }
+        }
+    }
+    &__media {
+        display: flex;
+        justify-content: center;
+        gap: 34px;
+        margin-top: 50px;
+        @include breakpoint-up(medium) {
+            grid-area: media;
+            gap: 13px;
+            margin-top: 66px;
+        }
+        img {
+            width: 32px;
+            height: 32px;
+            @include breakpoint-up(medium) {
+                width: 20px;
+                height: 20px;
+            }
+        }
+    }
+    &__logo {
+
+        width: 158px;
+        height: 26px;
+        margin: 54px auto 50px;
+        @include breakpoint-up(medium) {
+            grid-area: logo;
+            margin-top: 60px;
+        }
+    }
+    &__copyright {
+        // border: 1px solid white;
+        padding-bottom: 30px;
+        text-align: center;
+        color: $contentFontColor;
+        @include breakpoint-up(medium) {
+            grid-area: copyright;
+            padding: 0;
+            font-size: 13px;
+            text-align: start;
+            margin-top: 70px;
+        }
+    }
+}

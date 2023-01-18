@@ -1,0 +1,77 @@
+.hero {
+    @include breakpoint-up(large) {
+        // border: 1px solid blue;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 0 66px;
+    }
+    &__dashboard {
+        // border: 1px solid green;
+        padding: 12px 0 9.5px;
+        @include breakpoint-up(large) {
+            padding: 0;
+        }
+        img {
+            // border: 1px solid blue;
+            margin: auto;
+            width: 318px;
+            height: 290px;
+            @include breakpoint-up(large) {
+                width: 540px;
+                height: 485px;
+            }
+        }
+    }
+    &__intro {
+        // border: 1px solid orange;
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        padding: 0 0 32px 0;
+        text-align: center;
+        @include breakpoint-up(large) {
+            // padding: 0 62.5px 0 0;
+            text-align: start;
+        }
+
+        .title {
+            // border: 1px solid red;
+            margin-bottom: 4.5px;
+            font-size: 40px;
+            line-height: 1.25;
+            color: $titleFontColor;
+            @include breakpoint-up(large) {
+                margin-bottom: 8px;
+                font-size: 56px;
+            }
+        }
+        .content {
+            // border: 1px solid orange;
+            padding: 4.5px 16px 29px 16px;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.75;
+            color: $contentFontColor;
+            @include breakpoint-up(large) {
+                padding: 8px 0 20px 0;
+                width: 75%;
+            }
+        }
+        .get-started {
+            margin: auto;
+            width: 137px;
+            height: 44px;
+            font-size: 13px;
+            color: $white;
+            background-color: $mainColor;
+            border-radius: 22px;
+            -webkit-box-shadow: 0px 8px 15px -5px $mainColor;
+            box-shadow: 0px 8px 15px -5px $mainColor;
+            @include breakpoint-up(large) {
+                margin: 20px 0 0 0;
+            }
+        }
+    }
+}
